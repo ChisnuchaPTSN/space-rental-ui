@@ -1,0 +1,119 @@
+<div class="topbar">
+  <span>Sell Center</span>
+</div>
+
+<!-- HERO SUMMARY -->
+<div class="dashboard-hero2">
+
+  <div class="top-sec">
+    <div class="hero-icon"><i class="fa-solid fa-wallet"></i></div>
+    <div class="hero-text">
+      <h2>กระเป๋าเงิน</h2>
+      <p class="subtitle-badge">จัดการรายได้และการถอนเงิน</p>
+    </div>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="top-card">
+        <p>ยอดเงินคงเหลือ</p>
+        <i class="fa-solid fa-dollar-sign"></i>
+      </div>
+      <h3>฿2,176,000</h3>
+      <button class="btn-withdraw"><i class="fa-solid fa-arrow-up"></i>ถอนเงิน</button>
+    </div>
+
+    <div class="summary-card">
+      <div class="top-card">
+        <p>รายได้ทั้งหมด</p>
+        <i class="fa-solid fa-chart-line"></i>
+      </div>
+      <h3>฿2,976,000</h3>
+      <span class="green">+23% จากเดือนที่แล้ว</span>
+    </div>
+
+    <div class="summary-card">
+      <div class="top-card">
+        <p>รอรับเงิน</p>
+        <i class="fa-regular fa-clock"></i>
+      </div>
+      <h3>฿750,000</h3>
+      <span>จากการเช่าที่รอดำเนินการ</span>
+    </div>
+
+    <div class="summary-card">
+      <div class="top-card">
+        <p>ถอนเงินแล้ว</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <h3>฿800,000</h3>
+      <span>ถอนเงินไปแล้วทั้งหมด</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- CHART SECTION -->
+<div class="chart-grid">
+
+  <div class="chart-card">
+    <h4>รายได้รายเดือน</h4>
+    <canvas id="lineChart"></canvas>
+  </div>
+
+  <div class="chart-card">
+    <h4>รายได้ตามพื้นที่</h4>
+    <canvas id="barChart"></canvas>
+  </div>
+
+</div>
+
+<!-- TRANSACTION -->
+<div class="transaction-card">
+  <h4>ธุรกรรมล่าสุด</h4>
+
+  <div class="transaction-list">
+    <div class="transaction-item">
+      <div class="item-left">
+        <div class="icon-circle-add">
+          <i class="fa-solid fa-arrow-right arrow-up-right"></i>
+        </div>
+        <div class="item-details">
+          <strong>ค่าเช่าพื้นที่ 12 เดือน</strong>
+          <p>พื้นที่ร้านค้าใจกลางสยาม</p>
+          <p>ผู้เช่า: Fashion Forward Thailand</p>
+          <p>20 มกราคม 2567</p>
+        </div>
+      </div>
+      
+      <div class="item-right">
+        <span class="plus">+฿1,800,000</span>
+        <div class="status-success">
+          <i class="fa-regular fa-circle-check"></i>
+          สำเร็จ
+        </div>
+      </div>
+    </div>
+
+    <div class="transaction-item">
+      <div class="item-left">
+        <div class="icon-circle-minus">
+          <i class="fa-solid fa-arrow-right arrow-down-right"></i>
+        </div>
+        <div class="item-details">
+          <strong>ถอนเงินเข้าบัญชี</strong>
+          <p>22 มกราคม 2567</p>
+        </div>
+      </div>
+      
+      <div class="item-right">
+        <span class="minus">-฿500,000</span>
+        <div class="status-success">
+          <i class="fa-regular fa-circle-check"></i>
+          สำเร็จ
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

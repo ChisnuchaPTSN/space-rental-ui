@@ -1,0 +1,215 @@
+/* ===================== */
+/* FAVORITES PAGE LAYOUT */
+/* ===================== */
+
+.favorites-page {
+  background: #000;
+  color: #fff;
+  padding: 80px 30px;
+}
+
+/* HERO BANNER */
+.fav-hero {
+  height: 360px; /* ลดความสูงลงนิดหน่อยเพราะไม่มี Search box แล้ว */
+  background: url("/image/fav-banner.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 24px;
+  margin: 20px auto;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  position: relative;
+}
+
+.fav-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: #e0e0e0;
+}
+
+/* CONTAINER ขอบมนสีเทาเข้มรอบการ์ด (เหมือนในภาพ) */
+.fav-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: #0a0c10; /* สีพื้นหลังกล่องใหญ่ */
+  border-radius: 24px;
+  padding: 30px 40px 50px;
+}
+
+/* ACTION BAR (จัดเรียงทางขวา) */
+.fav-action-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.sort-dropdown {
+  background: #222;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.select-btn {
+  background: #222;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.select-btn:hover {
+  background: #333;
+}
+
+/* GRID */
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.fav-card {
+  background: #05070a; /* สีพื้นหลังการ์ด */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1f232b;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.fav-card:hover {
+  transform: translateY(-4px);
+  border-color: #4a4a4a;
+}
+
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ปุ่มถังขยะสีแดง */
+.delete-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  color: #d32f2f; /* สีแดง */
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 14px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+  background: #ffebeb;
+}
+
+/* CARD BODY */
+.card-body {
+  padding: 16px;
+}
+
+.card-body h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  color: #facc15;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.price span {
+  font-size: 12px;
+  color: #aaa;
+  margin-left: 4px;
+  font-weight: normal;
+}
+
+.meta,
+.location {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 1200px) {
+  .fav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .fav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fav-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fav-grid {
+    grid-template-columns: 1fr;
+  }
+  .fav-hero {
+    height: 220px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,271 @@
+/* ===============================
+   Modal Styles
+   =============================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  /* ซ่อนโดยค่าเริ่มต้น พร้อมเอฟเฟกต์ fade */
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #ffffff;
+  color: #333;
+  width: 100%;
+  max-width: 800px;
+  max-height: 70vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  margin: 14px;
+  padding: 20px 32px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transform: translateY(-20px);
+  transition: 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+  transform: translateY(0);
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Stepper */
+.stepper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 0 70px;
+}
+
+.step .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  background: #fff;
+  font-size: 14px;
+}
+
+.step.active .circle {
+  background: #2b70fa;
+  color: #fff;
+  border: none;
+  outline: 2px dashed #2b70fa;
+  outline-offset: 3px;
+}
+
+.stepper-container .line {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+  margin: 0 15px;
+}
+
+.stepper-container .line.active-line {
+  background: #2b70fa;
+}
+
+/* Form Body */
+.modal-body h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group .required {
+  color: red;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #eaeaea;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #5a5959;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2b70fa;
+  background-color: #fff;
+}
+
+.form-row.grid-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+}
+
+.form-row.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Footer */
+.modal-footer {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-next {
+  background: #2b70fa;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s;
+  font-family: "Prompt", sans-serif;
+}
+
+.btn-next:hover {
+  background: #1e5cd8;
+}
+
+/* ===============================
+   Responsive สำหรับ Modal ลงประกาศ
+   =============================== */
+
+/* 1. ปรับ Modal ตัวหลักให้รองรับหน้าจอเตี้ยๆ (ให้เลื่อนขึ้นลงได้) */
+.modal-content {
+  max-height: 90vh; /* ความสูงสูงสุดไม่เกิน 90% ของหน้าจอ */
+  overflow-y: auto; /* ถ้าเนื้อหายาวกว่าจอ ให้ไถขึ้นลงได้ในกรอบ */
+  margin: 16px; /* เผื่อระยะขอบไม่ให้ชิดขอบจอมือถือเกินไป */
+}
+
+/* ปรับแต่ง Scrollbar ใน Modal ให้ดูมินิมอล (สำหรับ Chrome/Safari) */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* 2. เมื่อหน้าจอเล็กกว่า 768px (พวก Tablet แนวนอนลงไปจนถึงมือถือ) */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px 16px; /* ลด Padding ด้านในเพื่อประหยัดพื้นที่จอ */
+  }
+
+  .modal-header h2 {
+    font-size: 18px; /* ลดขนาดฟอนต์หัวข้อลงนิดนึง */
+  }
+
+  /* --- ปรับขนาด Stepper (จุดวงกลมด้านบน) --- */
+  .stepper-container {
+    padding: 0 10px; /* ลดขอบด้านข้าง */
+    margin-bottom: 24px;
+  }
+  
+  .step .circle {
+    width: 32px;  /* ย่อขนาดวงกลม */
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .stepper-container .line {
+    margin: 0 8px; /* หดเส้นเชื่อมให้สั้นลง */
+  }
+
+  /* --- ปรับช่องกรอกข้อมูลให้เรียง 1 แถว --- */
+  .form-row.grid-3,
+  .form-row.grid-2 {
+    display: block; /* ยกเลิก Grid เปลี่ยนเป็นบล็อกปกติ */
+  }
+
+  /* ปุ่มกด "ถัดไป" ขยายเต็มความกว้างให้กดง่ายๆ ด้วยนิ้วโป้ง */
+  .btn-next {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* 3. สำหรับมือถือจอเล็กมากๆ (เล็กกว่า 480px) */
+@media (max-width: 480px) {
+  .stepper-container .line {
+    margin: 0 4px; /* หดเส้นเชื่อมให้สั้นลงอีกนิด */
+  }
+  
+  .step .circle {
+    width: 28px;
+    height: 28px;
+    font-size: 10px; /* ไอคอนเล็กลงหน่อยไม่ให้เบียด */
+  }
+}

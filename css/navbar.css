@@ -1,0 +1,251 @@
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;              /* ✔ ไม่ลอยมั่ว */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 1000;
+  background: transparent;      /* วางบน hero ได้ */
+}
+
+/* ตอน Scroll ลง */
+.navbar.scrolled {
+  background: rgba(2, 2, 2, 0.15);   /* ปรับสีได้ */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(98, 98, 98, 0.81);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* จำกัดความกว้าง */
+.nav-container {
+  max-width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo-circle {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 14px;
+  font-weight: 500;       /* ปรับได้ */
+  letter-spacing: 1px;   /* ช่วยให้ดูพรีเมียม */
+}
+
+/* ================= MENU ================= */
+
+.nav-menu {
+  position: relative;
+  display: flex;
+  gap: 28px;
+  padding: 7px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(7px);
+}
+
+.nav-menu a {
+  position: relative;     /* ✅ เพิ่ม */
+  padding: 6px 12px;      /* ✅ เพิ่ม */
+  z-index: 1;             /* ✅ เพิ่ม */
+
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-indicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 35px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(7px);
+
+  transform: translateY(-50%);
+  transition: all 0.35s ease; /* ตัวนี้คือพระเอกที่ทำให้มัน "เลื่อน" แทนที่จะ "วาร์ป" */
+  /* แนะนำให้เพิ่ม cubic-bezier เพื่อให้ดูพริ้วขึ้นครับ */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 0;
+}
+
+
+
+.nav-menu a.active,
+.nav-menu a:hover {
+  opacity: 1;
+}
+
+/* ================= RIGHT ================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
+}
+
+.announce-btn {
+  background: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ================= MOBILE MENU ================= */
+
+/* ================= MOBILE MENU OVERLAY ================= */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f0f0f; /* สีพื้นหลังดำแบบในภาพ */
+  z-index: 2000; /* ให้อยู่บนสุดทับ Navbar */
+  display: flex;
+  flex-direction: column;
+  
+  /* เอฟเฟกต์เลื่อนจากขวามาซ้าย */
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* คลาสสำหรับเรียกโชว์เมนู */
+.mobile-menu.show {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* เส้นขีดล่างบางๆ */
+}
+
+.close-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-links {
+  flex: 1; /* ดัน footer ลงไปด้านล่างสุด */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px;
+  gap: 24px; /* ระยะห่างระหว่างบรรทัดเมนู */
+}
+
+.mobile-menu-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mobile-menu-links a:hover {
+  color: #ccc;
+}
+
+.mobile-menu-footer {
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+  width: 100%;
+  background: #ff0000; /* สีปุ่มแดง */
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #cc0000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .nav-menu,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+}

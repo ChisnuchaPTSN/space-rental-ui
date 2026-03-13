@@ -1,0 +1,290 @@
+/* ===================== */
+/* LOGIN PAGE */
+/* ===================== */
+
+/* Wrapper หลักของหน้า */
+#content .login-page {
+  min-height: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+    url("../image/login.png") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 20px;
+}
+
+/* Layout */
+#content .login-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ===================== */
+/* LEFT (TEXT) */
+/* ===================== */
+
+#content .login-hero {
+  color: #fff;
+}
+
+#content .login-hero h1 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#content .login-hero h2 {
+  font-size: 46px;
+  font-weight: 500;
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+#content .login-hero h4 {
+  font-size: 23px;
+  font-weight: 400;
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+#content .login-hero p {
+  font-size: 18px;
+  max-width: 500px;
+  color: #eaeaea;
+}
+
+/* ===================== */
+/* CARD */
+/* ===================== */
+
+#content .login-card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 36px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#content .login-card h3 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+/* ===================== */
+/* FORM */
+/* ===================== */
+
+#content .login-form label {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#content .login-form input:not([type="checkbox"]) {
+  width: 100%;
+  box-sizing: border-box; /* ✅ สำคัญ */
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+#content .login-form input:focus {
+  outline: 2px solid #38bdf8;
+}
+
+/* Password field */
+#content .password-field {
+  position: relative;
+}
+
+#content .password-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 44px 12px 14px; /* 👉 เผื่อที่ให้ icon */
+  border-radius: 10px;
+  border: none;
+}
+
+#content .password-field span {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%); /* 👉 กลางจริง */
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#content .password-field span:hover {
+  opacity: 1;
+}
+
+/* Button */
+#content .login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #2f80ed;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#content .login-btn:hover {
+  background: #2563eb;
+}
+
+/* ===================== */
+/* DIVIDER */
+/* ===================== */
+
+#content .login-divider {
+  display: flex;
+  align-items: center;
+  margin: 26px 0;
+}
+
+#content .login-divider span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#content .login-divider p {
+  margin: 0 12px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ===================== */
+/* GOOGLE */
+/* ===================== */
+
+#content .google-login {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#content .google-login img {
+  width: 18px;
+}
+
+/* ===================== */
+/* REGISTER */
+/* ===================== */
+
+#content .login-register {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+#content .login-register a {
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+/* ===================== */
+/* PASSWORD HINT */
+/* ===================== */
+
+#content .password-hint {
+  font-size: 12px;
+  color: #e5e7eb;
+  margin: -10px 0 14px;
+  opacity: 0.85;
+}
+
+/* ===================== */
+/* TERMS & CONDITIONS */
+/* ===================== */
+
+#content .terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 18px 0 22px;
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+#content .terms input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  margin: 4px 0 0;
+  accent-color: #38bdf8;
+  cursor: pointer;
+}
+
+#content .terms label {
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+#content .terms a {
+  color: #38bdf8;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+#content .terms a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 1024px) {
+  #content .login-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  #content .login-hero {
+    text-align: center;
+  }
+
+  #content .login-hero p {
+    margin: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  #content .login-hero h1 {
+    font-size: 35px;
+  }
+  #content .login-hero h2 {
+    font-size: 34px;
+  }
+  #content .login-hero p {
+    display: none;
+  }
+
+  #content .login-card {
+    padding: 28px 22px;
+  }
+}
